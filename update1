@@ -1,0 +1,119 @@
+from time import sleep
+
+
+def soma(* numeros):
+    """
+    --> Função de soma
+    :param numeros: números a serem recebidos
+    :return: retorna o resultado da operação
+    """
+    soma = primeiro + segundo
+    return soma
+
+
+def diminuir(* numeros):
+    """
+    --> Função de subtração
+    :param numeros: números a serem recebidos
+    :return: retorna o resultado da operação
+    """
+    diferenca = primeiro - segundo
+    return diferenca
+
+
+def produto(* numeros):
+    """
+    --> Função de multiplicação
+    :param numeros: números a serem recebidos
+    :return: retorna o resultado da operação
+    """
+    produto = primeiro * segundo
+    return produto
+
+
+def divisao(* numeros):
+    """
+    --> Função de divisão
+    :param numeros: números a serem recebidos
+    :return: retorna o resultado da operação
+    """
+    if segundo == 0:
+        print("Não é possível dividir por zero.")
+    else:
+        resultado = primeiro / segundo
+        print(f"A divisão entre {primeiro} e {segundo} resulta em {resultado}")
+
+
+print("-" * 35)
+
+while True:
+    """leitura do primeiro número"""
+    numero_1 = input("Digite o primeiro número >>> ")
+    sleep(0.5)
+    if numero_1.isnumeric():
+        primeiro = int(numero_1)
+        break
+    else:
+        print("\033[31mDigite um número válido.\033[m")
+
+print("-" * 35)
+
+while True:
+    """leitura do segundo número"""
+    numero_2 = input("Digite o segundo número >>> ")
+    sleep(0.5)
+    if numero_2.isnumeric():
+        segundo = int(numero_2)
+        break
+    else:
+        print("\033[31mDigite um número válido\033[m")
+
+print("-" * 35)
+sleep(0.5)
+
+print("Escolha uma opção abaixo...")
+print("""[ 1 ] Soma
+[ 2 ] Subtração
+[ 3 ] Multiplicação
+[ 4 ] Divisão
+[ 5 ] Sair""")
+
+print("-" * 35)
+sleep(0.5)
+
+while True:
+    """leitura da operação"""
+    opcao = str(input("Digite aqui >>> "))
+    sleep(0.5)
+
+    """Cálculo e resposta"""
+
+    if opcao == "1":
+        resultado = soma(primeiro, segundo)
+        print(f"A soma entre {primeiro} e {segundo} resulta em {resultado}")
+        break
+
+    if opcao == "2":
+        resultado = diminuir(primeiro, segundo)
+        print(f"A diferença entre {primeiro} e {segundo} é de {resultado}")
+        break
+
+    if opcao == "3":
+        resultado = produto(primeiro, segundo)
+        print(f"O produto da multiplicação entre {primeiro} e {segundo} resulta em {resultado}")
+        break
+
+    if opcao == "4":
+        divisao(primeiro, segundo)
+        break
+
+    if opcao == "5":
+        print("Encerrando progama...")
+        sleep(1)
+        break
+
+    else:
+        print("Digite uma opção válida.")
+
+sleep(0.5)
+print("Obrigado, volte sempre.")
